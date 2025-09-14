@@ -16,7 +16,7 @@ private val budget: String  by lazy {
 }
 
 //5. Количество участников, может меняться, публичная информация. Добавлен сеттер просто для примера, т.к. может принимать только положительное значение
-var numberOfParticipants: Int = 20
+var numberOfParticipants: Int = 0
     set(value) {
         if (value >= 0) field = value
     }
