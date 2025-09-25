@@ -16,7 +16,7 @@ fun main() {
 //Напишите функцию, которая на основе номера месяца распечатывает сезон года. Номера месяцев начинаются с единицы.
 fun monthDefinition(month: Int) {
     when (month) {
-        12, in 0..2  -> println("Winter")
+        12, 1, 2  -> println("Winter")
         in 3..5 -> println("Spring")
         in 6..8 -> println("Summer")
         in 9..11 -> println("Autumn")
@@ -32,7 +32,7 @@ fun ageDog(age: Double) {
         ageDogHuman = age * 10.5
         println(ageDogHuman)
     } else if (age > 2) {
-        ageDogHuman = age * 4
+        ageDogHuman = age * 4 + 21 - 8
         println(ageDogHuman)
     } else {
         println("Incorrect dog age")
@@ -96,9 +96,10 @@ fun tempConvert(temp: Int, units: Char) {
 //Напишите функцию, которая на основе температуры воздуха рекомендует тип одежды: "куртка и шапка" при температуре ниже +10, "ветровка" от +10 до +18 градусов включительно и "футболка и шорты" при температуре выше +18 градусов. При температурах ниже -30 и выше +35 рекомендуйте не выходить из дома.
 fun clothChoose(temp: Int) {
     when {
-        temp < 10 -> println("Одень куртку и шапку")
+        temp  < -30 || temp > 35 -> println("Не выходи из дома")
+        //temp -30..10 -> println("Одень куртку и шапку")
         temp in 10..18 -> println("Одень ветровку")
-        temp > 18 -> println("Одень футболку и шорты")
+        temp in 19..35 -> println("Одень футболку и шорты")
         else -> println("Введена некорректная температура")
     }
 }
